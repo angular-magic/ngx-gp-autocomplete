@@ -1,0 +1,37 @@
+.sidebar {
+  padding: 20px;
+  min-height: 100vh;
+  border-right: 1px solid rgba(0, 0, 0, .12);
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+  &__items {
+    margin-top: 25px;
+  }
+}

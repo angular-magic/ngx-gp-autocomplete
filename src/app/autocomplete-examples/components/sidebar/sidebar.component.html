@@ -1,0 +1,23 @@
+<div class="sidebar">
+  <div class="sidebar__author">
+    <div class="sidebar__logo">
+      <img alt="angular-magic-logo" src="./assets/120x120.png" />
+    </div>
+
+    <div class="sidebar__name">
+      Angular Magic
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="sidebar__items">
+    <ul>
+      <ng-container *ngFor="let item of items">
+        <li>
+          <button [routerLink]="item.value" mat-button>{{item.label}}</button>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

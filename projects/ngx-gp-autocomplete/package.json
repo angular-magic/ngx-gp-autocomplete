@@ -1,0 +1,17 @@
+{
+  "name": "@angular-magic/ngx-gp-autocomplete",
+  "version": "1.0.0",
+  "description": "The dynamic validator library for Angular",
+  "author": "Dan Cornilov",
+  "peerDependencies": {
+    "@angular/core": ">= 2.0.0",
+    "@googlemaps/js-api-loader": "^1.15.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.52.0"
+  },
+  "sideEffects": false
+}

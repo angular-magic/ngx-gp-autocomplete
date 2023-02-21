@@ -1,27 +1,62 @@
-# NgxGooglePlace
+# ngx-gp-autocomplete
+<p align="center">
+  <img alt="Ngx-Markdown Logo" src="https://ngx-validator.angularmagic.com/assets/cover.png">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+**Demo: https://ngx-gp-autocomplete.angularmagic.com**
 
-## Development server
+This module is a wrapper for Google Places Autocomplete js library. Initial code base was copied from this project
+[ngx-google-places-autocomplete](https://www.npmjs.com/package/ngx-google-places-autocomplete), this module applies some fixes and improvements.
+Like [@types/google.maps](https://www.npmjs.com/package/@types/google.maps) and [@googlemaps/js-api-loader](https://www.npmjs.com/package/@googlemaps/js-api-loader)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[![NPM](https://nodei.co/npm/@angular-magic/ngx-gp-autocomplete.png)](https://nodei.co/npm/@angular-magic/ngx-gp-autocomplete/)
 
-## Code scaffolding
+# Installation
+#### npm
+```
+npm install @angular-magic/ngx-gp-autocomplete
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install @googlemaps/js-api-loader
+```
 
-## Build
+```
+npm install --save @types/google.maps
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+# Integration
+1. Import NgxGpAutocompleteModule into your application module
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```ts
+import { NgxGpAutocompleteModule } from "@angular-magic/ngx-gp-autocomplete";
 
-## Running end-to-end tests
+@NgModule({
+  imports: [
+    NgxGpAutocompleteModule.forRoot(
+        { loaderOptions: { apiKey: 'YOUR_API_KEY' } 
+    }),
+    BrowserModule,
+    FormsModule,
+    ...],
+  ....
+})
+```
+2. Replace YOUR_API_KEY with google places api key. Ref - https://developers.google.com/places/web-service/get-api-key
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Add directive ngx-gp-autocomplete to your input field (options is an optional parameter)
+```
+<input #placesRef="ngx-places" ngx-gp-autocomplete [options]='options' (onAddressChange)="handleAddressChange($event)"/>
+```
+3. Additionally you can reference directive in your component
+```ts
+    @ViewChild("placesRef") placesRef : NgxGpAutocompleteDirective;
+    
+        public handleAddressChange(place: google.maps.places.PlaceResult) {
+        // Do some stuff
+    }
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# GitHub
+Please feel free to declare issues or contribute: https://github.com/angular-magic/ngx-gp-autocomplete

@@ -47,31 +47,16 @@ import { NgxGpAutocompleteModule } from "@angular-magic/ngx-gp-autocomplete";
 
 2. Add directive ngx-gp-autocomplete to your input field (options is an optional parameter)
 ```
-<input ngx-gp-autocomplete [options]='options' (onAddressChange)="handleAddressChange($event)"/>
+<input #placesRef="ngx-places" ngx-gp-autocomplete [options]='options' (onAddressChange)="handleAddressChange($event)"/>
 ```
 3. Additionally you can reference directive in your component
 ```ts
-    @ViewChild("placesRef") placesRef : GooglePlaceDirective;
+    @ViewChild("placesRef") placesRef : NgxGpAutocompleteDirective;
     
-        public handleAddressChange(address: Address) {
+        public handleAddressChange(place: google.maps.places.PlaceResult) {
         // Do some stuff
     }
 ```
 
-# Angular Universal
-In order to use under angular universal please check that comment https://github.com/skynet2/ngx-google-places-autocomplete/issues/15#issuecomment-465371214
-
-## NgxGpAutocompleteOptions
-Refer to original google maps api - https://developers.google.com/maps/documentation/javascript/places-autocomplete
-NgxGpAutocompleteOptions object - https://github.com/skynet2/ngx-google-places-autocomplete/blob/master/src/objects/options/options.ts
-Google doc for NgxGpAutocompleteOptions : https://developers.google.com/maps/documentation/javascript/reference/places-widget#AutocompleteOptions
-Example :
-```html  
-[options]="{
-    types: [],
-    componentRestrictions: { country: 'UA' }
-    }"
-```
-
 # GitHub
-Please feel free to declare issues or contribute: https://github.com/skynet2/ngx-google-places-autocomplete
+Please feel free to declare issues or contribute: https://github.com/angular-magic/ngx-gp-autocomplete

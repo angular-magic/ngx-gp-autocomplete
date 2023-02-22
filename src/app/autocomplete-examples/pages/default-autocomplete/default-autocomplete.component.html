@@ -1,0 +1,33 @@
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Overview">
+    <div class="tab-content">
+      Bellow you can find how to use ngx-gp-autocomplete with Angular Material
+
+      <div class="wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input #ngxPlaces="ngx-places"
+                 class="input"
+                 type="text"
+                 matInput
+                 [formControl]="autocompleteInputControl"
+                 ngx-gp-autocomplete
+                 (onAddressChange)="selectAddress($event)">
+
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="HTML">
+    <pre>
+      <code> {{defaultFormHTML }}</code>
+    </pre>
+  </mat-tab>
+
+  <mat-tab label="TS">
+    <pre>
+      <code> {{defaultFormValidations }}</code>
+    </pre>
+  </mat-tab>
+</mat-tab-group>

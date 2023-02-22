@@ -1,8 +1,37 @@
 {
   "name": "@angular-magic/ngx-gp-autocomplete",
-  "version": "1.0.0",
-  "description": "The dynamic validator library for Angular",
+  "version": "1.0.2",
+  "description": "This module is a wrapper for Google Places Autocomplete JS library",
   "author": "Dan Cornilov",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular-magic/ngx-gp-autocomplete"
+  },
+  "bugs": {
+    "url": "https://github.com/angular-magic/ngx-gp-autocomplete/issues"
+  },
+  "homepage": "https://github.com/angular-magic/ngx-gp-autocomplete",
+  "keywords": [
+    "autocomplete",
+    "typescript",
+    "google places",
+    "angular 15",
+    "angular 14",
+    "angular google autocomplete",
+    "angular google place autocomplete",
+    "google place autocomplete",
+    "angular"
+  ],
+  "contributors": [
+    {
+      "name": "Dan Cornilov",
+      "url": "https://github.com/angular-magic/ngx-gp-autocomplete"
+    }
+  ],
   "peerDependencies": {
     "@angular/core": ">= 2.0.0",
     "@googlemaps/js-api-loader": "^1.15.1"

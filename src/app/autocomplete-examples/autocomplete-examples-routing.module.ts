@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AutocompleteExamplesComponent } from "./autocomplete-examples.component";
+import { DefaultAutocompleteComponent } from "./pages/default-autocomplete/default-autocomplete.component";
+import { MultipleCountriesComponent } from "./pages/multiple-countries/multiple-countries.component";
+import { MultipleInputsComponent } from "./pages/multiple-inputs/multiple-inputs.component";
 
 const routes: Routes = [
   {
@@ -14,20 +17,16 @@ const routes: Routes = [
       },
       {
         path: 'default',
-        component: DefaultValidatorComponent,
+        component: DefaultAutocompleteComponent,
       },
       {
-        path: 'custom',
-        component: CustomValidatorComponent,
+        path: 'custom-options',
+        component: MultipleCountriesComponent,
       },
       {
-        path: 'run-time',
-        component: RunTimeValidatorComponent,
+        path: 'multiple',
+        component: MultipleInputsComponent,
       },
-      {
-        path: 'backend',
-        component: BackendValidatorComponent,
-      }
     ]
   }
 ];

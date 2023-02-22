@@ -8,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
   items: { label: string; value: any }[] = [
     { label: 'Default', value: 'default' },
-    { label: 'Custom', value: 'custom' },
-    { label: 'Runtime', value: 'run-time' },
-    { label: 'Backend', value: 'backend' },
+    { label: 'Custom Options', value: 'custom-options' },
+    { label: 'Multiple', value: 'multiple' },
   ]
 
   constructor() {

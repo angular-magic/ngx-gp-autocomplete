@@ -5,9 +5,9 @@ import { NgxGpAutocompleteOptions } from "./ngx-gp-autocomplete-options";
   providedIn: 'root'
 })
 export class NgxGpAutocompleteService {
-  private defaultOptions: NgxGpAutocompleteOptions = new NgxGpAutocompleteOptions();
+  private defaultOptions: NgxGpAutocompleteOptions = {};
 
-  setOptions(options: Partial<NgxGpAutocompleteOptions>) {
+  setOptions(options: NgxGpAutocompleteOptions) {
     this.defaultOptions = { ...this.defaultOptions, ...options };
   }
 

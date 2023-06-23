@@ -34,8 +34,11 @@ import { NgxGpAutocompleteModule } from "@angular-magic/ngx-gp-autocomplete";
 
 @NgModule({
   imports: [
-    NgxGpAutocompleteModule.forRoot(
-        { loaderOptions: { apiKey: 'YOUR_API_KEY' } 
+    NgxGpAutocompleteModule.forRoot({ 
+      loaderOptions: { 
+            apiKey: 'YOUR_API_KEY',
+            libraries: ['places']
+        } 
     }),
     BrowserModule,
     FormsModule,

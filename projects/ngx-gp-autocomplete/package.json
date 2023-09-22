@@ -1,6 +1,6 @@
 {
   "name": "@angular-magic/ngx-gp-autocomplete",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This module is a wrapper for Google Places Autocomplete JS library",
   "author": "Dan Cornilov",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "autocomplete",
     "typescript",
     "google places",
+    "angular 16",
     "angular 15",
     "angular 14",
     "angular google autocomplete",

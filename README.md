@@ -1,7 +1,5 @@
 # ngx-gp-autocomplete
-<p align="center">
-  <img alt="Ngx-Markdown Logo" src="https://ngx-validator.angularmagic.com/assets/cover.png">
-</p>
+<img alt="Ngx-Markdown Logo" src="https://ngx-validator.angularmagic.com/assets/cover.png">
 
 **Demo: https://ngx-gp-autocomplete.angularmagic.com**
 
@@ -11,55 +9,59 @@ Like [@types/google.maps](https://www.npmjs.com/package/@types/google.maps) and 
 
 [![NPM](https://nodei.co/npm/@angular-magic/ngx-gp-autocomplete.png)](https://nodei.co/npm/@angular-magic/ngx-gp-autocomplete/)
 
-# Installation
-#### npm
-```
-npm install @angular-magic/ngx-gp-autocomplete
-```
-
-```
-npm install @googlemaps/js-api-loader
-```
-
-```
-npm install --save @types/google.maps
+## Installation
+### npm
+```shell
+npm install -S @angular-magic/ngx-gp-autocomplete
+npm install -S @googlemaps/js-api-loader
+npm install -D @types/google.maps
 ```
 
 
-# Integration
-1. Import NgxGpAutocompleteModule into your application module
+### Integration
+- Import NgxGpAutocompleteModule into your application module
 
 ```ts
 import { NgxGpAutocompleteModule } from "@angular-magic/ngx-gp-autocomplete";
 
 @NgModule({
   imports: [
-    NgxGpAutocompleteModule.forRoot({ 
-      loaderOptions: { 
-            apiKey: 'YOUR_API_KEY',
-            libraries: ['places']
-        } 
-    }),
+    NgxGpAutocompleteModule,
     BrowserModule,
     FormsModule,
-    ...],
-  ....
+    //...
+  ],
+  providers: [
+    {
+      provide: Loader,
+      useValue: new Loader({
+        apiKey: 'AIzaSyAFaylOBsuhYPYw9YqWmhN370xTvc6DXYU',
+        libraries: ['places']
+      })
+    },
+    //...
+  ],
+  //...
 })
 ```
-2. Replace YOUR_API_KEY with google places api key. Ref - https://developers.google.com/places/web-service/get-api-key
+- Replace YOUR_API_KEY with google places api key. Ref - https://developers.google.com/places/web-service/get-api-key
 
-2. Add directive ngx-gp-autocomplete to your input field (options is an optional parameter)
-```
+- Add directive ngx-gp-autocomplete to your input field (options is an optional parameter)
+
+```html
 <input #placesRef="ngx-places" ngx-gp-autocomplete [options]='options' (onAddressChange)="handleAddressChange($event)"/>
 ```
-3. Additionally you can reference directive in your component
+
+- Additionally you can reference directive in your component
 ```ts
-    @ViewChild("placesRef") placesRef : NgxGpAutocompleteDirective;
-    
-        public handleAddressChange(place: google.maps.places.PlaceResult) {
+export class Component {
+    @ViewChild('ngxPlaces') placesRef: NgxGpAutocompleteDirective;
+
+    public handleAddressChange(place: google.maps.places.PlaceResult) {
         // Do some stuff
     }
+}
 ```
 
-# GitHub
+## GitHub
 Please feel free to declare issues or contribute: https://github.com/angular-magic/ngx-gp-autocomplete

@@ -29,8 +29,8 @@ export class NgxGpAutocompleteDirective implements AfterViewInit {
       this.options = this.ngxGpAutocompleteService.getOptions();
     }
 
-    this.loader.importLibrary("maps").then(
-      maps => this.initialize(),
+    this.loader.importLibrary("places").then(
+      () => this.initialize(),
       console.error
     );
   }

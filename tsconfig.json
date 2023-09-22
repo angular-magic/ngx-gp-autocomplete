@@ -13,7 +13,7 @@
     "strictPropertyInitialization": false,
     "sourceMap": true,
     "paths": {
-      "ngx-gp-autocomplete": [
+      "@angular-magic/ngx-gp-autocomplete": [
         "dist/ngx-gp-autocomplete"
       ]
     },

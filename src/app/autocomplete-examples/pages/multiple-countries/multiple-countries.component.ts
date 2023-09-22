@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { FormControl } from "@angular/forms";
 import { NgxGpAutocompleteDirective } from "@angular-magic/ngx-gp-autocomplete";
 import { defaultFormHTML, defaultFormValidations } from "./form-code";
-import { NgxGpAutocompleteOptions } from "ngx-gp-autocomplete";
+import { NgxGpAutocompleteOptions } from "@angular-magic/ngx-gp-autocomplete";
 
 @Component({
   selector: 'app-multiple-countries',

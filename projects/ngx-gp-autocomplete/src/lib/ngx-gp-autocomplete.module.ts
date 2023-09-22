@@ -1,19 +1,19 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { NgxGpAutocompleteDirective } from "./ngx-gp-autocomplete.directive";
-import { NgxGpConfig } from "./ngx-gp-config";
+import { Loader } from '@googlemaps/js-api-loader';
 
 @NgModule({
   declarations: [NgxGpAutocompleteDirective],
   exports: [NgxGpAutocompleteDirective],
 })
 export class NgxGpAutocompleteModule {
-  static forRoot(config: NgxGpConfig): ModuleWithProviders<NgxGpAutocompleteModule> {
+  static forRoot(loader: Loader): ModuleWithProviders<NgxGpAutocompleteModule> {
     return {
       ngModule: NgxGpAutocompleteModule,
       providers: [
         {
-          provide: NgxGpConfig,
-          useValue: config
+          provide: Loader,
+          useValue: loader
         }
       ]
     };

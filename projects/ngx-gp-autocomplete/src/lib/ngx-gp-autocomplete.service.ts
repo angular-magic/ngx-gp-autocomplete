@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgxGpAutocompleteOptions } from "./ngx-gp-autocomplete-options";
+import { NgxGpAutocompleteOptions } from './ngx-gp-autocomplete-options';
 
 @Injectable({
   providedIn: 'root'

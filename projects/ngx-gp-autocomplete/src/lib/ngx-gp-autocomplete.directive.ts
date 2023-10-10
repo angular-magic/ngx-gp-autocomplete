@@ -1,7 +1,7 @@
 import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, NgZone, Output } from '@angular/core';
-import { Loader } from "@googlemaps/js-api-loader";
-import { NgxGpAutocompleteOptions } from "./ngx-gp-autocomplete-options";
-import { NgxGpAutocompleteService } from "./ngx-gp-autocomplete.service";
+import { Loader } from '@googlemaps/js-api-loader';
+import { NgxGpAutocompleteOptions } from './ngx-gp-autocomplete-options';
+import { NgxGpAutocompleteService } from './ngx-gp-autocomplete.service';
 
 declare let google: any;
 

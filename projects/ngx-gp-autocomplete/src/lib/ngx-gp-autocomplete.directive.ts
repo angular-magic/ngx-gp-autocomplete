@@ -20,7 +20,7 @@ export class NgxGpAutocompleteDirective implements AfterViewInit {
     public el: ElementRef,
     private ngxGpAutocompleteService: NgxGpAutocompleteService,
     private loader: Loader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
   ) {
   }
 
@@ -29,10 +29,12 @@ export class NgxGpAutocompleteDirective implements AfterViewInit {
       this.options = this.ngxGpAutocompleteService.getOptions();
     }
 
-    this.loader.importLibrary("places").then(
-      () => this.initialize(),
-      console.error
-    );
+    if (!this.isGoogleLibExists()) {
+      this.loader.importLibrary("places").then(
+        () => this.initialize(),
+        console.error
+      );
+    }
   }
 
   private isGoogleLibExists(): boolean {

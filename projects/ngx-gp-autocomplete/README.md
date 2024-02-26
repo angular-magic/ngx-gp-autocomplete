@@ -46,7 +46,7 @@ import { NgxGpAutocompleteModule } from "@angular-magic/ngx-gp-autocomplete";
     {
       provide: Loader,
       useValue: new Loader({
-        apiKey: 'AIzaSyAFaylOBsuhYPYw9YqWmhN370xTvc6DXYU',
+        apiKey: 'YOUR_API_KEY',
         libraries: ['places']
       })
     },

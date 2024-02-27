@@ -5,6 +5,7 @@ import { NgxGpAutocompleteOptions } from './ngx-gp-autocomplete-options';
   providedIn: 'root'
 })
 export class NgxGpAutocompleteService {
+  private verifyGooglePersistence: boolean;
   private defaultOptions: NgxGpAutocompleteOptions = {};
 
   setOptions(options: NgxGpAutocompleteOptions) {
@@ -13,5 +14,13 @@ export class NgxGpAutocompleteService {
 
   getOptions(): NgxGpAutocompleteOptions {
     return this.defaultOptions;
+  }
+
+  enableGooglePersistenceCheck(): void {
+    this.verifyGooglePersistence = true;
+  }
+
+  getGooglePersistenceCheck(): boolean {
+    return this.verifyGooglePersistence;
   }
 }

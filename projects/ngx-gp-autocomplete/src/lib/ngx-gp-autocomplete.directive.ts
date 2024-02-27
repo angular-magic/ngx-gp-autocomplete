@@ -29,11 +29,12 @@ export class NgxGpAutocompleteDirective implements AfterViewInit {
       this.options = this.ngxGpAutocompleteService.getOptions();
     }
 
-    if (!this.isGoogleLibExists()) {
-      this.loader.importLibrary("places").then(
-        () => this.initialize(),
-        console.error
-      );
+    if (this.ngxGpAutocompleteService.getGooglePersistenceCheck()) {
+      if (!this.isGoogleLibExists()) {
+        this.loader.importLibrary("places").then(() => this.initialize(), console.error);
+      }
+    } else {
+      this.loader.importLibrary("places").then(() => this.initialize(), console.error);
     }
   }
 
